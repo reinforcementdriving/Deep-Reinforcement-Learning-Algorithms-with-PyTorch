@@ -1,116 +1,103 @@
 # Deep Reinforcement Learning Algorithms with PyTorch
 
-![RL](Environments/Animation_Gifs/RL_image.jpeg)   ![PyTorch](Environments/Animation_Gifs/PyTorch-logo-2.jpg)
+![Travis CI](https://travis-ci.org/p-christ/Deep-Reinforcement-Learning-Algorithms-with-PyTorch.svg?branch=master)
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)
 
-This repository contains PyTorch implementations of deep reinforcement learning algorithms. 
+
+
+![RL](utilities/RL_image.jpeg)   ![PyTorch](utilities/PyTorch-logo-2.jpg)
+
+This repository contains PyTorch implementations of deep reinforcement learning algorithms and environments. 
 
 ## **Algorithms Implemented** 
 
-1. Deep Q Learning (DQN) ([Mnih 2013](https://arxiv.org/pdf/1312.5602.pdf))  
-1. DQN with Fixed Q Targets ([Mnih 2013](https://arxiv.org/pdf/1312.5602.pdf))
-1. Double DQN ([Hado van Hasselt 2015](https://arxiv.org/pdf/1509.06461.pdf))
-1. Double DQN with Prioritised Experience Replay ([Schaul 2016](https://arxiv.org/pdf/1511.05952.pdf))
-1. REINFORCE ([Williams 1992](http://www-anw.cs.umass.edu/~barto/courses/cs687/williams92simple.pdf))
-1. PPO ([Schulman 2017](https://openai-public.s3-us-west-2.amazonaws.com/blog/2017-07/ppo/ppo-arxiv.pdf))
-1. DDPG ([Lillicrap 2016](https://arxiv.org/pdf/1509.02971.pdf)) 
-1. Hill Climbing
-1. Genetic Evolution
-1. DQN with Hindsight Experience Replay (DQN-HER) ([Andrychowicz 2018](https://arxiv.org/pdf/1707.01495.pdf))
-1. DDPG with Hindsight Experience Replay (DDPG-HER) ([Andrychowicz 2018](https://arxiv.org/pdf/1707.01495.pdf)) 
+1. *Deep Q Learning (DQN)* <sub><sup> ([Mnih et al. 2013](https://arxiv.org/pdf/1312.5602.pdf)) </sup></sub>  
+1. *DQN with Fixed Q Targets* <sub><sup> ([Mnih et al. 2013](https://arxiv.org/pdf/1312.5602.pdf)) </sup></sub>
+1. *Double DQN (DDQN)* <sub><sup> ([Hado van Hasselt et al. 2015](https://arxiv.org/pdf/1509.06461.pdf)) </sup></sub>
+1. *DDQN with Prioritised Experience Replay* <sub><sup> ([Schaul et al. 2016](https://arxiv.org/pdf/1511.05952.pdf)) </sup></sub>
+1. *Dueling DDQN* <sub><sup> ([Wang et al. 2016](http://proceedings.mlr.press/v48/wangf16.pdf)) </sup></sub>
+1. *REINFORCE* <sub><sup> ([Williams et al. 1992](http://www-anw.cs.umass.edu/~barto/courses/cs687/williams92simple.pdf)) </sup></sub>
+1. *Deep Deterministic Policy Gradients (DDPG)* <sub><sup> ([Lillicrap et al. 2016](https://arxiv.org/pdf/1509.02971.pdf) ) </sup></sub>
+1. *Twin Delayed Deep Deterministic Policy Gradients (TD3)* <sub><sup> ([Fujimoto et al. 2018](https://arxiv.org/abs/1802.09477)) </sup></sub>
+1. *Soft Actor-Critic (SAC & SAC-Discrete)* <sub><sup> ([Haarnoja et al. 2018](https://arxiv.org/pdf/1812.05905.pdf)) </sup></sub> 
+1. *Asynchronous Advantage Actor Critic (A3C)* <sub><sup> ([Mnih et al. 2016](https://arxiv.org/pdf/1602.01783.pdf)) </sup></sub>
+1. *Syncrhonous Advantage Actor Critic (A2C)*
+1. *Proximal Policy Optimisation (PPO)* <sub><sup> ([Schulman et al. 2017](https://openai-public.s3-us-west-2.amazonaws.com/blog/2017-07/ppo/ppo-arxiv.pdf)) </sup></sub>
+1. *DQN with Hindsight Experience Replay (DQN-HER)* <sub><sup> ([Andrychowicz et al. 2018](https://arxiv.org/pdf/1707.01495.pdf)) </sup></sub>
+1. *DDPG with Hindsight Experience Replay (DDPG-HER)* <sub><sup> ([Andrychowicz et al. 2018](https://arxiv.org/pdf/1707.01495.pdf) ) </sup></sub>
+1. *Hierarchical-DQN (h-DQN)* <sub><sup> ([Kulkarni et al. 2016](https://arxiv.org/pdf/1604.06057.pdf)) </sup></sub>
+1. *Stochastic NNs for Hierarchical Reinforcement Learning (SNN-HRL)* <sub><sup> ([Florensa et al. 2017](https://arxiv.org/pdf/1704.03012.pdf)) </sup></sub>
+1. *Diversity Is All You Need (DIAYN)* <sub><sup> ([Eyensbach et al. 2018](https://arxiv.org/pdf/1802.06070.pdf)) </sup></sub>
 
 All implementations are able to quickly solve Cart Pole (discrete actions), Mountain Car Continuous (continuous actions), 
-Bit Flipping (discrete actions with dynamic goals) or Fetch Reach (continuous actions with dynamic goals). I plan to add A2C, A3C and PPO-HER soon.
+Bit Flipping (discrete actions with dynamic goals) or Fetch Reach (continuous actions with dynamic goals). I plan to add more hierarchical RL algorithms soon.
 
+## **Environments Implemented**
+
+1. *Bit Flipping Game* <sub><sup> (as described in [Andrychowicz et al. 2018](https://arxiv.org/pdf/1707.01495.pdf)) </sup></sub>
+1. *Four Rooms Game* <sub><sup> (as described in [Sutton et al. 1998](http://www-anw.cs.umass.edu/~barto/courses/cs687/Sutton-Precup-Singh-AIJ99.pdf)) </sup></sub>
+1. *Long Corridor Game* <sub><sup> (as described in [Kulkarni et al. 2016](https://arxiv.org/pdf/1604.06057.pdf)) </sup></sub>
+1. *Ant-{Maze, Push, Fall}* <sub><sup> (as desribed in [Nachum et al. 2018](https://arxiv.org/pdf/1805.08296.pdf) and their accompanying [code](https://github.com/tensorflow/models/tree/master/research/efficient-hrl)) </sup></sub>
 
 ## **Results**
 
-### a) Discrete Action Games 
+#### 1. Cart Pole and Mountain Car
 
-#### Cart Pole:
-
-![example](Environments/Animation_Gifs/Cart_Pole.gif)
-
-Below shows the number of episodes taken and also time taken for each algorithm to achieve the solution score for the game Cart Pole. Because results can vary greatly each run, each agent plays the game 10 times and we show the *median* result. 
-We show the results in terms of number of episodes taken to reach the required score
-and also time taken. The algorithms were run on a 2017 Macbook Pro (no GPUs were used). The hyperparameters used are shown in the file `Results/Cart_Pole/Results.py`.   
-
-![Cart Pole Results](Results/Cart_Pole/Results_Graph.png)
+Below shows various RL algorithms successfully learning discrete action game [Cart Pole](https://github.com/openai/gym/wiki/CartPole-v0)
+ or continuous action game [Mountain Car](https://github.com/openai/gym/wiki/MountainCarContinuous-v0). The mean result from running the algorithms 
+ with 3 random seeds is shown with the shaded area representing plus and minus 1 standard deviation. Hyperparameters
+ used can be found in files `results/Cart_Pole.py` and `results/Mountain_Car.py`. 
+ 
+![Cart Pole and Mountain Car Results](results/data_and_graphs/CartPole_and_MountainCar_Graph.png) 
 
 
-### b) Continuous Action Games 
+#### 2. Hindsight Experience Replay (HER) Experiements
 
-#### Mountain Car
-  
-![example](Environments/Animation_Gifs/Mountain_Car.gif)  
-  
-Here are the results for DDPG with respect to the Mountain Car (Continuous) game. The hyperparameters used are shown in the file `Results/Mountain_Car_Continuous/Results.py`.
+Below shows the performance of DQN and DDPG with and without Hindsight Experience Replay (HER) in the Bit Flipping (14 bits) 
+and Fetch Reach environments described in the papers [Hindsight Experience Replay 2018](https://arxiv.org/pdf/1707.01495.pdf) 
+and [Multi-Goal Reinforcement Learning 2018](https://arxiv.org/abs/1802.09464). The results replicate the results found in 
+the papers and show how adding HER can allow an agent to solve problems that it otherwise would not be able to solve at all. Note that the same hyperparameters were used within each pair of agents and so the only difference 
+between them was whether hindsight was used or not. 
 
+![HER Experiment Results](results/data_and_graphs/HER_Experiments.png)
 
-![Mountain Car Continuous Results](Results/Mountain_Car_Continuous/Results_Graph.png)
+#### 3. Hierarchical Reinforcement Learning Experiments
 
+The results on the left below show the performance of DQN and the algorithm hierarchical-DQN from [Kulkarni et al. 2016](https://arxiv.org/pdf/1604.06057.pdf)
+on the Long Corridor environment also explained in [Kulkarni et al. 2016](https://arxiv.org/pdf/1604.06057.pdf). The environment
+requires the agent to go to the end of a corridor before coming back in order to receive a larger reward. This delayed 
+gratification and the aliasing of states makes it a somewhat impossible game for DQN to learn but if we introduce a 
+meta-controller (as in h-DQN) which directs a lower-level controller how to behave we are able to make more progress. This 
+aligns with the results found in the paper. 
 
-#### Tennis
-
-The [Tennis](https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Learning-Environment-Examples.md#tennis) environment is a multi-agent
-cooperative environment where the goal of each agent is to hit the ball back to the other play as many times
- as possible without the ball going out of play or hitting the ground.  
-<p align="center"><img src="https://user-images.githubusercontent.com/10624937/42135623-e770e354-7d12-11e8-998d-29fc74429ca2.gif" alt="Example" width="50%" style="middle"></p>
-
-A DDPG agent was used to solve the environment with the results below. The hyperparameters used can be found in `Results/Tennis/Results.py`:
-
-![Tennis Results](Results/Tennis/Results_Graph.png)
-
-### c) Hindsight Experience Replay (HER) Experiments
-
-#### Bit Flipping 
-
-Below shows the performance of DQN with and without Hindsight Experience Replay (HER) in the Bit Flipping Environment (14 bits) described
-in the paper [Hindsight Experience Replay 2018](https://arxiv.org/pdf/1707.01495.pdf). The results replicate the result 
-found in the paper and show that adding HER allowed the agent to solve a problem that vanilla DQN was not able
- to practically solve. The hyperparameters used were the same for both agents and the same as in the paper, they can be found in the file: `Results/Bit_Flipping/Results.py`    
-
-![Bit Flipping Results](Results/Bit_Flipping/Results_Graph.png)
-
-#### Fetch Reach
-
-Below shows the performance of DDPG with and without Hindsight Experience Replay in the Fetch Reach environment
-which is introduced in this [Open AI blog post](https://blog.openai.com/ingredients-for-robotics-research/). The results
-mirror those seen in paper [Multi-Goal Reinforcement Learning 2018](https://arxiv.org/pdf/1802.09464.pdf) and show that adding Hindsight Experience Replay
-dramatically improved the ability of the agent to learn the task. The hyperparameters used were the same for both agents and the same as in the paper, they can be found 
-in the file: `Results/Fetch_Reach/Results.py`
-
-![Bit Flipping Results](Results/Fetch_Reach/Results_Graph.png)
-
-
+The results on the right show the performance of DDQN and algorithm Stochastic NNs for Hierarchical Reinforcement Learning 
+(SNN-HRL) from [Florensa et al. 2017](https://arxiv.org/pdf/1704.03012.pdf). DDQN is used as the comparison because
+the implementation of SSN-HRL uses 2 DDQN algorithms within it. Note that the first 300 episodes of training
+for SNN-HRL were used for pre-training which is why there is no reward for those episodes. 
+ 
+![Long Corridor and Four Rooms](results/data_and_graphs/Four_Rooms_and_Long_Corridor.png)
+     
 
 ### Usage ###
 
 The repository's high-level structure is:
  
-    ├── Agents                    
-        ├── Actor_Critic_Agents   
-        ├── DQN_Agents         
-        ├── Policy_Gradient_Agents
-        └── Stochastic_Policy_Search_Agents 
-    ├── Environments
-        ├── Open_AI_Gym_Environments   
-        ├── Other_Environments         
-        └── Unity_Environments    
-    ├── Results
-        ├── Bit_Flipping_Environment   
-        ├── Cart_Pole
-        ├── Fetch_Reach
-        ├── Mountain_Car_Continuous             
-        └── Tennis        
-    ├── Tests
-    ├── Utilities
-        ├── Data_Structures             
-        └── Models            
+    ├── agents                    
+        ├── actor_critic_agents   
+        ├── DQN_agents         
+        ├── policy_gradient_agents
+        └── stochastic_policy_search_agents 
+    ├── environments   
+    ├── results             
+        └── data_and_graphs        
+    ├── tests
+    ├── utilities             
+        └── data structures            
    
 
-#### i) To Watch the Agents Learn the Above Games  
+#### i) To watch the agents learn the above games  
 
-To watch all the different agents learn the above games follow these steps:
+To watch all the different agents learn Cart Pole follow these steps:
 
 ```commandline
 git clone https://github.com/p-christ/Deep_RL_Implementations.git
@@ -121,34 +108,15 @@ y
 conda activate myenvname
 
 pip3 install -r requirements.txt
-export PYTHONPATH="${PYTHONPATH}:/Deep_RL_Implementations"
+
+python Results/Cart_Pole.py
 ``` 
 
-And then to watch them learn **Cart Pole** run:
-`python Results/Cart_Pole/Results.py`
+For other games change the last line to one of the other files in the Results folder. 
 
-To watch them learn **Mountain Car** run: `python Results/Mountain_Car_Continuous/Results.py`
+#### ii) To train the agents on another game  
 
-To watch them learn **Tennis** you will need to download the environment:
+Most Open AI gym environments should work. All you would need to do is change the config.environment field (look at `Results/Cart_Pole.py`  for an example of this). 
 
-1. Linux: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P3/Tennis/Tennis_Linux.zip)
-1. Mac OSX: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P3/Tennis/Tennis.app.zip)
-1. Windows (32-bit): [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P3/Tennis/Tennis_Windows_x86.zip)
-1. Windows (64-bit): [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P3/Tennis/Tennis_Windows_x86_64.zip)
-
-and then run: `python Results/Tennis/Results.py`
-
-To watch them learn **Bit Flipping** run: `python Results/Bit_Flipping/Results.py`
-
-To watch them learn **Fetch Reach** run: `python Results/Fetch_Reach/Results.py`
-
-
-#### ii) To Train the Agents on your Own Game  
-
-To use the algorithms with your own particular game instead you follow these steps:
- 
-1. Create an Environment class to represent your game - the environment class you create should extend the `Base_Environment` class found in the `Environments` folder to make 
-it compatible with all the agents.  
-
-2. Create a config object with the hyperparameters and game you want to use. See `Results/Cart_Pole/Results.py` for an example of this.
-3. Use function `run_games_for_agents` to have the different agents play the game. Again see `Results/Cart_Pole/Results.py` for an example of this.
+You can also play with your own custom game if you create a separate class that inherits from gym.Env. See `Environments/Four_Rooms_Environment.py`
+for an example of a custom environment and then see the script `Results/Four_Rooms.py` to see how to have agents play the environment.
